@@ -112,7 +112,7 @@ const PatientRecord = ({
                         </div>
                         <p className="text-xs sm:text-sm text-muted-foreground mb-2">Routine checkup and blood pressure monitoring</p>
                         <div className="text-xs text-muted-foreground">
-                          <span className="bg-primary/20 text-primary px-2 py-1 rounded-full mr-2">Completed</span>
+                          <span className="bg-primary/80 px-2 py-1 rounded-full mr-2 text-zinc-50">Completed</span>
                           Dr. Sarah Johnson
                         </div>
                       </div>
@@ -124,7 +124,7 @@ const PatientRecord = ({
                         </div>
                         <p className="text-xs sm:text-sm text-muted-foreground mb-2">Blood work and cholesterol screening</p>
                         <div className="text-xs text-muted-foreground">
-                          <span className="bg-primary/80 text-primary px-2 py-1 rounded-full mr-2">Completed</span>
+                          <span className="bg-primary/80 px-2 py-1 rounded-full mr-2 text-zinc-50">Completed</span>
                           Dr. Sarah Johnson
                         </div>
                       </div>
