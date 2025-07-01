@@ -16,34 +16,38 @@ const Index = () => {
     {
       id: 1,
       name: "Benjamin Frank",
-      specialty: "General doctor",
+      age: 45,
+      gender: "Male",
       time: "2 mins",
       status: "waiting",
-      avatar: "👨‍⚕️"
+      avatar: "👨"
     },
     {
       id: 2,
       name: "Lica Fitcher",
-      specialty: "Urologist specialist",
+      age: 32,
+      gender: "Female",
       time: "10 mins",
       status: "waiting",
-      avatar: "👩‍⚕️"
+      avatar: "👩"
     },
     {
       id: 3,
       name: "Jonathon",
-      specialty: "Cardiologist",
+      age: 28,
+      gender: "Male",
       time: "5 mins",
       status: "in-progress",
-      avatar: "👨‍⚕️"
+      avatar: "👨"
     },
     {
       id: 4,
       name: "Jamil Sheikh",
-      specialty: "Neurologist",
+      age: 52,
+      gender: "Male",
       time: "15 mins",
       status: "completed",
-      avatar: "👨‍⚕️"
+      avatar: "👨"
     }
   ];
 
@@ -190,7 +194,7 @@ const Index = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-card-foreground text-sm sm:text-base">{patient.name}</h3>
-                          <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">{patient.specialty}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">{patient.age} years, {patient.gender}</p>
                           <div className="flex items-center space-x-2 mt-1">
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                               patient.status === 'waiting' ? 'bg-secondary text-secondary-foreground' :
