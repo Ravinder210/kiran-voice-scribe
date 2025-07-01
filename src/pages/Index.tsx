@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mic, Users, FileText, Pill, History, Paperclip, ChevronRight, Search, Bell, User } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -65,7 +64,7 @@ const Index = () => {
                   Kiran
                 </h1>
               </div>
-              <span className="text-sm text-purple-600 font-medium">Ray of Hope</span>
+              <span className="hidden md:inline text-sm text-purple-600 font-medium">Ray of Hope</span>
             </div>
             
             <div className="flex items-center space-x-4">
