@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import PatientQueue from '@/components/PatientQueue';
 import PatientRecord from '@/components/PatientRecord';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const Index = () => {
   const [selectedPatient, setSelectedPatient] = useState(null);
@@ -51,7 +52,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <div className="bg-card/80 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,6 +77,7 @@ const Index = () => {
                   className="pl-10 w-64 border-border focus:border-primary bg-card/50"
                 />
               </div>
+              <ThemeToggle />
               <Button variant="ghost" size="sm">
                 <Bell className="w-4 h-4" />
               </Button>

@@ -93,7 +93,26 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    /* Ensure theme class is applied to html element */
+    min-height: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    min-height: 100vh;
+    /* Fallback colors in case CSS variables don't load */
+    background-color: hsl(45 20% 96%);
+    color: hsl(158 100% 15%);
+  }
+
+  .dark body {
+    background-color: hsl(158 100% 8%);
+    color: hsl(45 20% 96%);
+  }
+
+  /* Ensure root div takes full height */
+  #root {
+    min-height: 100vh;
   }
 }
