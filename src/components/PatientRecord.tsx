@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowLeft, FileText, Pill, History, Paperclip } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -8,13 +7,14 @@ import PatientInfo from './PatientInfo';
 import VoiceRecording from './VoiceRecording';
 import ClinicalNoteForm from './ClinicalNoteForm';
 import PrescriptionForm from './PrescriptionForm';
-
 interface PatientRecordProps {
   patient: any;
   onBack: () => void;
 }
-
-const PatientRecord = ({ patient, onBack }: PatientRecordProps) => {
+const PatientRecord = ({
+  patient,
+  onBack
+}: PatientRecordProps) => {
   const [activeTab, setActiveTab] = useState('clinical-note');
   const [clinicalNote, setClinicalNote] = useState({
     subjective: '',
@@ -24,14 +24,11 @@ const PatientRecord = ({ patient, onBack }: PatientRecordProps) => {
   });
   const [prescriptionText, setPrescriptionText] = useState('');
   const [showClinicalForm, setShowClinicalForm] = useState(false);
-
   const handleTranscriptionComplete = (notes: any) => {
     setClinicalNote(notes);
     setShowClinicalForm(true);
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-accent via-background to-muted">
+  return <div className="min-h-screen bg-gradient-to-br from-accent via-background to-muted">
       {/* Header */}
       <div className="bg-card/80 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,14 +82,7 @@ const PatientRecord = ({ patient, onBack }: PatientRecordProps) => {
                     <CardTitle className="text-base sm:text-lg text-card-foreground">Clinical Consultation</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    {!showClinicalForm ? (
-                      <VoiceRecording onTranscriptionComplete={handleTranscriptionComplete} />
-                    ) : (
-                      <ClinicalNoteForm 
-                        clinicalNote={clinicalNote} 
-                        setClinicalNote={setClinicalNote} 
-                      />
-                    )}
+                    {!showClinicalForm ? <VoiceRecording onTranscriptionComplete={handleTranscriptionComplete} /> : <ClinicalNoteForm clinicalNote={clinicalNote} setClinicalNote={setClinicalNote} />}
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -103,10 +93,7 @@ const PatientRecord = ({ patient, onBack }: PatientRecordProps) => {
                     <CardTitle className="text-base sm:text-lg text-card-foreground">Create Prescription</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <PrescriptionForm 
-                      prescriptionText={prescriptionText} 
-                      setPrescriptionText={setPrescriptionText} 
-                    />
+                    <PrescriptionForm prescriptionText={prescriptionText} setPrescriptionText={setPrescriptionText} />
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -120,7 +107,7 @@ const PatientRecord = ({ patient, onBack }: PatientRecordProps) => {
                     <div className="space-y-4">
                       <div className="p-3 sm:p-4 bg-primary/5 rounded-lg border border-primary/20">
                         <div className="flex justify-between items-start mb-2">
-                          <h4 className="font-medium text-card-foreground text-sm sm:text-base">Previous Consultation</h4>
+                          <h4 className="text-card-foreground text-sm sm:text-base font-extrabold">Previous Consultation</h4>
                           <span className="text-xs text-muted-foreground">2 weeks ago</span>
                         </div>
                         <p className="text-xs sm:text-sm text-muted-foreground mb-2">Routine checkup and blood pressure monitoring</p>
@@ -185,8 +172,6 @@ const PatientRecord = ({ patient, onBack }: PatientRecordProps) => {
           </div>
         </Tabs>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default PatientRecord;
