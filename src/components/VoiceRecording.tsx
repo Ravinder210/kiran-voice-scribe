@@ -1,27 +1,24 @@
-
 import React, { useState } from 'react';
 import { Mic, Square, Pause } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-
 interface VoiceRecordingProps {
   onTranscriptionComplete: (notes: any) => void;
 }
-
-const VoiceRecording = ({ onTranscriptionComplete }: VoiceRecordingProps) => {
+const VoiceRecording = ({
+  onTranscriptionComplete
+}: VoiceRecordingProps) => {
   const [voiceFlow, setVoiceFlow] = useState<'selection' | 'recording' | 'processing' | 'completed'>('selection');
   const [selectedVoiceOption, setSelectedVoiceOption] = useState<'transcribe' | 'dictate' | null>(null);
   const [recordingTime, setRecordingTime] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
-
   const handleVoiceOptionSelect = (option: 'transcribe' | 'dictate') => {
     setSelectedVoiceOption(option);
     setVoiceFlow('recording');
   };
-
   const handleStartRecording = () => {
     setIsRecording(true);
     setRecordingTime(0);
-    
+
     // Simulate recording timer
     const timer = setInterval(() => {
       setRecordingTime(prev => prev + 1);
@@ -30,7 +27,6 @@ const VoiceRecording = ({ onTranscriptionComplete }: VoiceRecordingProps) => {
     // Store timer reference for cleanup
     (window as any).recordingTimer = timer;
   };
-
   const handleStopRecording = () => {
     setIsRecording(false);
     if ((window as any).recordingTimer) {
@@ -50,36 +46,29 @@ const VoiceRecording = ({ onTranscriptionComplete }: VoiceRecordingProps) => {
       setVoiceFlow('completed');
     }, 3000);
   };
-
   const resetVoiceFlow = () => {
     setVoiceFlow('selection');
     setSelectedVoiceOption(null);
     setRecordingTime(0);
     setIsRecording(false);
   };
-
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
-
   if (voiceFlow === 'selection') {
-    return (
-      <div className="text-center py-8 space-y-6">
+    return <div className="text-center py-8 space-y-6">
         <div className="w-32 h-32 mx-auto bg-gradient-to-r from-primary/10 to-primary/20 rounded-full flex items-center justify-center mb-6">
           <div className="w-20 h-20 bg-gradient-to-r from-primary/20 to-primary/30 rounded-full flex items-center justify-center">
             <Mic className="w-8 h-8 text-primary" />
           </div>
         </div>
         <h3 className="text-xl font-semibold text-card-foreground mb-4">Capture Consultation</h3>
-        <p className="text-muted-foreground mb-8">Your clinical note will appear here once your transcription or dictation is complete.</p>
+        <p className="text-muted-foreground mb-8 text-sm">Your clinical note will appear here once your transcription or dictation is complete.</p>
         
         <div className="space-y-4">
-          <Button 
-            onClick={() => handleVoiceOptionSelect('transcribe')}
-            className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-6 rounded-lg flex items-center justify-center space-x-2"
-          >
+          <Button onClick={() => handleVoiceOptionSelect('transcribe')} className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-6 rounded-lg flex items-center justify-center space-x-2">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 flex items-center">
                 <div className="flex space-x-0.5">
@@ -93,37 +82,22 @@ const VoiceRecording = ({ onTranscriptionComplete }: VoiceRecordingProps) => {
             </div>
           </Button>
           
-          <Button 
-            onClick={() => handleVoiceOptionSelect('dictate')}
-            variant="outline"
-            className="w-full max-w-md mx-auto border-primary text-primary hover:bg-primary/10 py-3 px-6 rounded-lg flex items-center justify-center space-x-2"
-          >
+          <Button onClick={() => handleVoiceOptionSelect('dictate')} variant="outline" className="w-full max-w-md mx-auto border-primary text-primary hover:bg-primary/10 py-3 px-6 rounded-lg flex items-center justify-center space-x-2">
             <Mic className="w-4 h-4" />
             <span>Dictate Summary</span>
           </Button>
         </div>
-      </div>
-    );
+      </div>;
   }
-
   if (voiceFlow === 'recording') {
-    return (
-      <div className="text-center py-8 space-y-6">
+    return <div className="text-center py-8 space-y-6">
         <h3 className="text-xl font-semibold text-card-foreground mb-4">Clinical Note</h3>
         
         {/* Audio Waveform Visualization */}
         <div className="flex items-center justify-center space-x-1 mb-6">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className={`w-1 bg-primary rounded-full transition-all duration-300 ${
-                isRecording ? 'animate-pulse' : ''
-              }`}
-              style={{
-                height: isRecording ? `${Math.random() * 30 + 10}px` : '10px'
-              }}
-            />
-          ))}
+          {[...Array(20)].map((_, i) => <div key={i} className={`w-1 bg-primary rounded-full transition-all duration-300 ${isRecording ? 'animate-pulse' : ''}`} style={{
+          height: isRecording ? `${Math.random() * 30 + 10}px` : '10px'
+        }} />)}
         </div>
 
         {/* Timer */}
@@ -138,57 +112,36 @@ const VoiceRecording = ({ onTranscriptionComplete }: VoiceRecordingProps) => {
         </p>
 
         <div className="flex justify-center space-x-4">
-          {!isRecording ? (
-            <Button 
-              onClick={handleStartRecording}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg"
-            >
+          {!isRecording ? <Button onClick={handleStartRecording} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg">
               Start Recording
-            </Button>
-          ) : (
-            <>
-              <Button 
-                variant="outline"
-                className="px-6 py-3 rounded-lg border-border"
-              >
+            </Button> : <>
+              <Button variant="outline" className="px-6 py-3 rounded-lg border-border">
                 <Pause className="w-4 h-4 mr-2" />
                 Pause
               </Button>
-              <Button 
-                onClick={handleStopRecording}
-                className="bg-destructive hover:bg-destructive/90 text-destructive-foreground px-6 py-3 rounded-lg"
-              >
+              <Button onClick={handleStopRecording} className="bg-destructive hover:bg-destructive/90 text-destructive-foreground px-6 py-3 rounded-lg">
                 <Square className="w-4 h-4 mr-2" />
                 Stop Transcribing
               </Button>
-            </>
-          )}
+            </>}
         </div>
-      </div>
-    );
+      </div>;
   }
-
   if (voiceFlow === 'processing') {
-    return (
-      <div className="text-center py-8 space-y-6">
+    return <div className="text-center py-8 space-y-6">
         <div className="w-16 h-16 mx-auto">
           <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
         </div>
         <h3 className="text-xl font-semibold text-card-foreground">Processing Your Recording</h3>
         <p className="text-muted-foreground">AI is analyzing your consultation and generating clinical notes...</p>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="flex justify-between items-center mb-4">
+  return <div className="flex justify-between items-center mb-4">
       <h3 className="text-lg font-semibold text-card-foreground">Generated Clinical Notes</h3>
       <Button variant="outline" size="sm" onClick={resetVoiceFlow} className="border-primary text-primary hover:bg-primary/10">
         <Mic className="w-4 h-4 mr-2" />
         New Recording
       </Button>
-    </div>
-  );
+    </div>;
 };
-
 export default VoiceRecording;

@@ -119,7 +119,7 @@ const PatientRecord = ({
                       
                       <div className="p-3 sm:p-4 bg-secondary/50 rounded-lg border border-border">
                         <div className="flex justify-between items-start mb-2">
-                          <h4 className="font-medium text-card-foreground text-sm sm:text-base">Lab Results Review</h4>
+                          <h4 className="text-card-foreground text-sm sm:text-base font-extrabold">Lab Results Review</h4>
                           <span className="text-xs text-muted-foreground">1 month ago</span>
                         </div>
                         <p className="text-xs sm:text-sm text-muted-foreground mb-2">Blood work and cholesterol screening</p>
