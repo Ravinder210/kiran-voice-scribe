@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mic, Users, FileText, Pill, History, Paperclip, ChevronRight, Search, Bell, User } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -7,56 +6,46 @@ import { Input } from "@/components/ui/input";
 import PatientQueue from '@/components/PatientQueue';
 import PatientRecord from '@/components/PatientRecord';
 import ThemeToggle from '@/components/ThemeToggle';
-
 const Index = () => {
   const [selectedPatient, setSelectedPatient] = useState(null);
   const [currentView, setCurrentView] = useState('dashboard');
-
-  const todaysPatients = [
-    {
-      id: 1,
-      name: "Benjamin Frank",
-      age: 45,
-      gender: "Male",
-      time: "2 mins",
-      status: "waiting",
-      avatar: "👨"
-    },
-    {
-      id: 2,
-      name: "Lica Fitcher",
-      age: 32,
-      gender: "Female",
-      time: "10 mins",
-      status: "waiting",
-      avatar: "👩"
-    },
-    {
-      id: 3,
-      name: "Jonathon",
-      age: 28,
-      gender: "Male",
-      time: "5 mins",
-      status: "in-progress",
-      avatar: "👨"
-    },
-    {
-      id: 4,
-      name: "Jamil Sheikh",
-      age: 52,
-      gender: "Male",
-      time: "15 mins",
-      status: "completed",
-      avatar: "👨"
-    }
-  ];
-
+  const todaysPatients = [{
+    id: 1,
+    name: "Benjamin Frank",
+    age: 45,
+    gender: "Male",
+    time: "2 mins",
+    status: "waiting",
+    avatar: "👨"
+  }, {
+    id: 2,
+    name: "Lica Fitcher",
+    age: 32,
+    gender: "Female",
+    time: "10 mins",
+    status: "waiting",
+    avatar: "👩"
+  }, {
+    id: 3,
+    name: "Jonathon",
+    age: 28,
+    gender: "Male",
+    time: "5 mins",
+    status: "in-progress",
+    avatar: "👨"
+  }, {
+    id: 4,
+    name: "Jamil Sheikh",
+    age: 52,
+    gender: "Male",
+    time: "15 mins",
+    status: "completed",
+    avatar: "👨"
+  }];
   if (selectedPatient) {
     return <PatientRecord patient={selectedPatient} onBack={() => setSelectedPatient(null)} />;
   }
-
-  return (
-    <div className="min-h-screen bg-background text-foreground">
+  return <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <div className="bg-card/80 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,16 +59,13 @@ const Index = () => {
                   Kiran
                 </h1>
               </div>
-              <span className="hidden md:inline text-sm text-primary/70 font-medium">Ray of Hope</span>
+              <span className="hidden md:inline text-sm text-primary/70 font-extrabold">Ray of Hope</span>
             </div>
             
             <div className="flex items-center space-x-4">
               <div className="relative hidden sm:block">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                <Input 
-                  placeholder="Search patients..." 
-                  className="pl-10 w-64 border-border focus:border-primary bg-card/50"
-                />
+                <Input placeholder="Search patients..." className="pl-10 w-64 border-border focus:border-primary bg-card/50" />
               </div>
               <ThemeToggle />
               <Button variant="ghost" size="sm">
@@ -182,12 +168,7 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {todaysPatients.map((patient) => (
-                    <div 
-                      key={patient.id}
-                      className="flex items-center justify-between p-3 sm:p-4 bg-accent/30 rounded-xl hover:shadow-md transition-all cursor-pointer border border-border"
-                      onClick={() => setSelectedPatient(patient)}
-                    >
+                  {todaysPatients.map(patient => <div key={patient.id} className="flex items-center justify-between p-3 sm:p-4 bg-accent/30 rounded-xl hover:shadow-md transition-all cursor-pointer border border-border" onClick={() => setSelectedPatient(patient)}>
                       <div className="flex items-center space-x-3 sm:space-x-4">
                         <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-lg sm:text-xl">
                           {patient.avatar}
@@ -200,11 +181,7 @@ const Index = () => {
                             <span className="font-bold">{patient.gender.charAt(0)}</span>
                           </div>
                           <div className="flex items-center space-x-2 mt-1">
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              patient.status === 'waiting' ? 'bg-secondary text-secondary-foreground' :
-                              patient.status === 'in-progress' ? 'bg-primary/20 text-primary' :
-                              'bg-accent text-accent-foreground'
-                            }`}>
+                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${patient.status === 'waiting' ? 'bg-secondary text-secondary-foreground' : patient.status === 'in-progress' ? 'bg-primary/20 text-primary' : 'bg-accent text-accent-foreground'}`}>
                               {patient.status.replace('-', ' ')}
                             </span>
                             <span className="text-xs text-muted-foreground">{patient.time}</span>
@@ -212,8 +189,7 @@ const Index = () => {
                         </div>
                       </div>
                       <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
@@ -261,8 +237,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
