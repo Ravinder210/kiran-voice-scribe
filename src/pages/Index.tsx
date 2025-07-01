@@ -194,7 +194,11 @@ const Index = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-card-foreground text-sm sm:text-base">{patient.name}</h3>
-                          <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">{patient.age} years, {patient.gender}</p>
+                          <div className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground hidden sm:block">
+                            <span className="font-bold">{patient.age}</span>
+                            <span>•</span>
+                            <span className="font-bold">{patient.gender.charAt(0)}</span>
+                          </div>
                           <div className="flex items-center space-x-2 mt-1">
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                               patient.status === 'waiting' ? 'bg-secondary text-secondary-foreground' :
