@@ -51,39 +51,39 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-purple-100">
+      <div className="bg-card/80 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
+                <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center">
+                  <div className="w-4 h-4 bg-primary-foreground rounded-full"></div>
                 </div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold text-primary">
                   Kiran
                 </h1>
               </div>
-              <span className="hidden md:inline text-sm text-purple-600 font-medium">Ray of Hope</span>
+              <span className="hidden md:inline text-sm text-primary/70 font-medium">Ray of Hope</span>
             </div>
             
             <div className="flex items-center space-x-4">
               <div className="relative hidden sm:block">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                 <Input 
                   placeholder="Search patients..." 
-                  className="pl-10 w-64 border-purple-200 focus:border-purple-400"
+                  className="pl-10 w-64 border-border focus:border-primary bg-card/50"
                 />
               </div>
               <Button variant="ghost" size="sm">
                 <Bell className="w-4 h-4" />
               </Button>
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center">
-                  <User className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center">
+                  <User className="w-4 h-4 text-primary-foreground" />
                 </div>
-                <span className="hidden sm:inline text-sm font-medium text-gray-700">Dr. Sazidur Rahman</span>
+                <span className="hidden sm:inline text-sm font-medium text-foreground">Dr. Sazidur Rahman</span>
               </div>
             </div>
           </div>
@@ -93,10 +93,10 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-6 sm:p-8 text-primary-foreground relative overflow-hidden">
             <div className="relative z-10">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2">Good Morning, Doctor!</h2>
-              <p className="text-purple-100 mb-4 sm:mb-6 text-sm sm:text-base">Ready to bring hope and healing to your patients today</p>
+              <p className="text-primary-foreground/80 mb-4 sm:mb-6 text-sm sm:text-base">Ready to bring hope and healing to your patients today</p>
               <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-2">
                   <Users className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -108,57 +108,57 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/5 rounded-full translate-y-16 translate-x-16"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-foreground/10 rounded-full -translate-y-32 translate-x-32"></div>
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary-foreground/5 rounded-full translate-y-16 translate-x-16"></div>
           </div>
         </div>
 
         {/* Quick Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8">
-          <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+          <Card className="border-border hover:shadow-lg transition-shadow bg-card/50 backdrop-blur-sm">
             <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs sm:text-sm text-gray-600">Today's Patients</p>
-                  <p className="text-xl sm:text-2xl font-bold text-purple-600">8</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Today's Patients</p>
+                  <p className="text-xl sm:text-2xl font-bold text-primary">8</p>
                 </div>
-                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500" />
+                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
               </div>
             </CardContent>
           </Card>
           
-          <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+          <Card className="border-border hover:shadow-lg transition-shadow bg-card/50 backdrop-blur-sm">
             <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs sm:text-sm text-gray-600">Consultations</p>
-                  <p className="text-xl sm:text-2xl font-bold text-blue-600">5</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Consultations</p>
+                  <p className="text-xl sm:text-2xl font-bold text-primary">5</p>
                 </div>
-                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" />
+                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
               </div>
             </CardContent>
           </Card>
           
-          <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+          <Card className="border-border hover:shadow-lg transition-shadow bg-card/50 backdrop-blur-sm">
             <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs sm:text-sm text-gray-600">Prescriptions</p>
-                  <p className="text-xl sm:text-2xl font-bold text-green-600">12</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Prescriptions</p>
+                  <p className="text-xl sm:text-2xl font-bold text-primary">12</p>
                 </div>
-                <Pill className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" />
+                <Pill className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
               </div>
             </CardContent>
           </Card>
           
-          <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+          <Card className="border-border hover:shadow-lg transition-shadow bg-card/50 backdrop-blur-sm">
             <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs sm:text-sm text-gray-600">Voice Notes</p>
-                  <p className="text-xl sm:text-2xl font-bold text-orange-600">15</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Voice Notes</p>
+                  <p className="text-xl sm:text-2xl font-bold text-primary">15</p>
                 </div>
-                <Mic className="w-6 h-6 sm:w-8 sm:h-8 text-orange-500" />
+                <Mic className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
               </div>
             </CardContent>
           </Card>
@@ -167,11 +167,11 @@ const Index = () => {
         {/* Patient Queue */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="lg:col-span-2">
-            <Card className="border-purple-200">
+            <Card className="border-border bg-card/50 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
-                  <span className="text-lg sm:text-xl font-semibold text-gray-800">Patient Queue</span>
-                  <span className="text-xs sm:text-sm text-gray-500">Today's Schedule</span>
+                  <span className="text-lg sm:text-xl font-semibold text-card-foreground">Patient Queue</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">Today's Schedule</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -179,29 +179,29 @@ const Index = () => {
                   {todaysPatients.map((patient) => (
                     <div 
                       key={patient.id}
-                      className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl hover:shadow-md transition-all cursor-pointer border border-purple-100"
+                      className="flex items-center justify-between p-3 sm:p-4 bg-accent/30 rounded-xl hover:shadow-md transition-all cursor-pointer border border-border"
                       onClick={() => setSelectedPatient(patient)}
                     >
                       <div className="flex items-center space-x-3 sm:space-x-4">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white text-lg sm:text-xl">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground text-lg sm:text-xl">
                           {patient.avatar}
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-800 text-sm sm:text-base">{patient.name}</h3>
-                          <p className="text-xs sm:text-sm text-gray-600 hidden sm:block">{patient.specialty}</p>
+                          <h3 className="font-semibold text-card-foreground text-sm sm:text-base">{patient.name}</h3>
+                          <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">{patient.specialty}</p>
                           <div className="flex items-center space-x-2 mt-1">
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              patient.status === 'waiting' ? 'bg-yellow-100 text-yellow-700' :
-                              patient.status === 'in-progress' ? 'bg-blue-100 text-blue-700' :
-                              'bg-green-100 text-green-700'
+                              patient.status === 'waiting' ? 'bg-secondary text-secondary-foreground' :
+                              patient.status === 'in-progress' ? 'bg-primary/20 text-primary' :
+                              'bg-accent text-accent-foreground'
                             }`}>
                               {patient.status.replace('-', ' ')}
                             </span>
-                            <span className="text-xs text-gray-500">{patient.time}</span>
+                            <span className="text-xs text-muted-foreground">{patient.time}</span>
                           </div>
                         </div>
                       </div>
-                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
+                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
                     </div>
                   ))}
                 </div>
@@ -211,13 +211,13 @@ const Index = () => {
 
           <div className="space-y-6">
             {/* Voice Assistant Card */}
-            <Card className="border-purple-200 bg-gradient-to-br from-purple-500 to-blue-500 text-white">
+            <Card className="border-border bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
                   <h3 className="font-semibold text-sm sm:text-base">Voice Assistant</h3>
                 </div>
-                <p className="text-purple-100 mb-4 text-xs sm:text-sm">Start voice-enabled consultation for faster, more accurate patient records.</p>
+                <p className="text-primary-foreground/80 mb-4 text-xs sm:text-sm">Start voice-enabled consultation for faster, more accurate patient records.</p>
                 <Button variant="secondary" className="w-full text-sm">
                   Start Voice Session
                 </Button>
@@ -225,24 +225,24 @@ const Index = () => {
             </Card>
 
             {/* Quick Actions */}
-            <Card className="border-purple-200">
+            <Card className="border-border bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-base sm:text-lg">Quick Actions</CardTitle>
+                <CardTitle className="text-base sm:text-lg text-card-foreground">Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm border-border hover:bg-accent/30" size="sm">
                   <FileText className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   New Clinical Note
                 </Button>
-                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm border-border hover:bg-accent/30" size="sm">
                   <Pill className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   Create Prescription
                 </Button>
-                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm border-border hover:bg-accent/30" size="sm">
                   <History className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   View Patient History
                 </Button>
-                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm border-border hover:bg-accent/30" size="sm">
                   <Paperclip className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   Upload Documents
                 </Button>
