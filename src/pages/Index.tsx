@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mic, Users, FileText, Pill, History, Paperclip, ChevronRight, Search, Bell, User } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -68,7 +69,7 @@ const Index = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <div className="relative">
+              <div className="relative hidden sm:block">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <Input 
                   placeholder="Search patients..." 
@@ -82,7 +83,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center">
                   <User className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-sm font-medium text-gray-700">Dr. Sazidur Rahman</span>
+                <span className="hidden sm:inline text-sm font-medium text-gray-700">Dr. Sazidur Rahman</span>
               </div>
             </div>
           </div>
@@ -92,18 +93,18 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl p-8 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-2">Good Morning, Doctor!</h2>
-              <p className="text-purple-100 mb-6">Ready to bring hope and healing to your patients today</p>
-              <div className="flex items-center space-x-6">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">Good Morning, Doctor!</h2>
+              <p className="text-purple-100 mb-4 sm:mb-6 text-sm sm:text-base">Ready to bring hope and healing to your patients today</p>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-2">
-                  <Users className="w-5 h-5" />
-                  <span>8 patients today</span>
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="text-sm sm:text-base">8 patients today</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Mic className="w-5 h-5" />
-                  <span>Voice-enabled consultations</span>
+                  <Mic className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="text-sm sm:text-base">Voice-enabled consultations</span>
                 </div>
               </div>
             </div>
@@ -113,64 +114,64 @@ const Index = () => {
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8">
           <Card className="border-purple-200 hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Today's Patients</p>
-                  <p className="text-2xl font-bold text-purple-600">8</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Today's Patients</p>
+                  <p className="text-xl sm:text-2xl font-bold text-purple-600">8</p>
                 </div>
-                <Users className="w-8 h-8 text-purple-500" />
+                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500" />
               </div>
             </CardContent>
           </Card>
           
           <Card className="border-purple-200 hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Consultations</p>
-                  <p className="text-2xl font-bold text-blue-600">5</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Consultations</p>
+                  <p className="text-xl sm:text-2xl font-bold text-blue-600">5</p>
                 </div>
-                <FileText className="w-8 h-8 text-blue-500" />
+                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" />
               </div>
             </CardContent>
           </Card>
           
           <Card className="border-purple-200 hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Prescriptions</p>
-                  <p className="text-2xl font-bold text-green-600">12</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Prescriptions</p>
+                  <p className="text-xl sm:text-2xl font-bold text-green-600">12</p>
                 </div>
-                <Pill className="w-8 h-8 text-green-500" />
+                <Pill className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" />
               </div>
             </CardContent>
           </Card>
           
           <Card className="border-purple-200 hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-600">Voice Notes</p>
-                  <p className="text-2xl font-bold text-orange-600">15</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Voice Notes</p>
+                  <p className="text-xl sm:text-2xl font-bold text-orange-600">15</p>
                 </div>
-                <Mic className="w-8 h-8 text-orange-500" />
+                <Mic className="w-6 h-6 sm:w-8 sm:h-8 text-orange-500" />
               </div>
             </CardContent>
           </Card>
         </div>
 
         {/* Patient Queue */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="lg:col-span-2">
             <Card className="border-purple-200">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
-                  <span className="text-xl font-semibold text-gray-800">Patient Queue</span>
-                  <span className="text-sm text-gray-500">Today's Schedule</span>
+                  <span className="text-lg sm:text-xl font-semibold text-gray-800">Patient Queue</span>
+                  <span className="text-xs sm:text-sm text-gray-500">Today's Schedule</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -178,16 +179,16 @@ const Index = () => {
                   {todaysPatients.map((patient) => (
                     <div 
                       key={patient.id}
-                      className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl hover:shadow-md transition-all cursor-pointer border border-purple-100"
+                      className="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl hover:shadow-md transition-all cursor-pointer border border-purple-100"
                       onClick={() => setSelectedPatient(patient)}
                     >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white text-xl">
+                      <div className="flex items-center space-x-3 sm:space-x-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white text-lg sm:text-xl">
                           {patient.avatar}
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-800">{patient.name}</h3>
-                          <p className="text-sm text-gray-600">{patient.specialty}</p>
+                          <h3 className="font-semibold text-gray-800 text-sm sm:text-base">{patient.name}</h3>
+                          <p className="text-xs sm:text-sm text-gray-600 hidden sm:block">{patient.specialty}</p>
                           <div className="flex items-center space-x-2 mt-1">
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                               patient.status === 'waiting' ? 'bg-yellow-100 text-yellow-700' :
@@ -200,7 +201,7 @@ const Index = () => {
                           </div>
                         </div>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-gray-400" />
+                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                     </div>
                   ))}
                 </div>
@@ -211,13 +212,13 @@ const Index = () => {
           <div className="space-y-6">
             {/* Voice Assistant Card */}
             <Card className="border-purple-200 bg-gradient-to-br from-purple-500 to-blue-500 text-white">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Mic className="w-6 h-6" />
-                  <h3 className="font-semibold">Voice Assistant</h3>
+                  <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <h3 className="font-semibold text-sm sm:text-base">Voice Assistant</h3>
                 </div>
-                <p className="text-purple-100 mb-4">Start voice-enabled consultation for faster, more accurate patient records.</p>
-                <Button variant="secondary" className="w-full">
+                <p className="text-purple-100 mb-4 text-xs sm:text-sm">Start voice-enabled consultation for faster, more accurate patient records.</p>
+                <Button variant="secondary" className="w-full text-sm">
                   Start Voice Session
                 </Button>
               </CardContent>
@@ -226,23 +227,23 @@ const Index = () => {
             {/* Quick Actions */}
             <Card className="border-purple-200">
               <CardHeader>
-                <CardTitle className="text-lg">Quick Actions</CardTitle>
+                <CardTitle className="text-base sm:text-lg">Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" size="sm">
-                  <FileText className="w-4 h-4 mr-2" />
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                  <FileText className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   New Clinical Note
                 </Button>
-                <Button variant="outline" className="w-full justify-start" size="sm">
-                  <Pill className="w-4 h-4 mr-2" />
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                  <Pill className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   Create Prescription
                 </Button>
-                <Button variant="outline" className="w-full justify-start" size="sm">
-                  <History className="w-4 h-4 mr-2" />
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                  <History className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   View Patient History
                 </Button>
-                <Button variant="outline" className="w-full justify-start" size="sm">
-                  <Paperclip className="w-4 h-4 mr-2" />
+                <Button variant="outline" className="w-full justify-start text-xs sm:text-sm" size="sm">
+                  <Paperclip className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   Upload Documents
                 </Button>
               </CardContent>
